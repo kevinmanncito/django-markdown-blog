@@ -18,11 +18,11 @@ Quick start
 
 2. Include the polls URLconf in your project urls.py like this::
 
-    url(r'^polls/', include('polls.urls')),
+    url(r'^blog/', include('markdown_blog.urls')),
 
-3. Run `python manage.py migrate` to create the polls models.
+3. Run `python manage.py migrate` to create the blog models.
 
-4. Start the development server and visit http://127.0.0.1:8000/admin/
-   to create a poll (you'll need the Admin app enabled).
+4. Start the development server and visit http://localhost:8000/admin/
+   to create your first blog post (you'll need the Admin app enabled).
 
-5. Visit http://127.0.0.1:8000/polls/ to participate in the poll.
+5. Visit http://localhost:8000/polls/ to view your latest blog posts.

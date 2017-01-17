@@ -2,8 +2,7 @@
 Django Markdown Blog
 =====
 
-Django Markdown Blog is a simple Django app to add a simple markdown blog to any Django project
- polls.
+Django Markdown Blog is a simple Django app that will give any Django project a blog that works with markdown.
 
 Detailed documentation is in the "docs" directory.
 

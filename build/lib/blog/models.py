@@ -6,8 +6,11 @@ from django.db import models
 from django.utils.encoding import python_2_unicode_compatible
 from django.utils.translation import ugettext_lazy as _
 
+
 from autoslug.fields import AutoSlugField
 from django_markdown.models import MarkdownField
+from imagekit.models import ImageSpecField, ProcessedImageField
+from imagekit.processors import ResizeToFill
 from slugify import Slugify
 
 slugify_lower = Slugify(to_lower=True)
@@ -20,9 +23,20 @@ class Post(models.Model):
     published = models.BooleanField(_('Published status'), default=False)
     modified = models.DateTimeField(auto_now=True)
     created = models.DateTimeField(auto_now_add=True)
+    banner = models.ImageField(_('Banner image'), 
+                               upload_to='post_banner_images',
+                               null=True,
+                               blank=True)
+    large_thumbnail = ImageSpecField(source='banner',
+                                     processors=[ResizeToFill(600, 600)],
+                                     format='JPEG',
+                                     options={'quality': 80})
+    thumbnail = ImageSpecField(source='banner',
+                               processors=[ResizeToFill(300, 300)],
+                               format='JPEG',
+                               options={'quality': 80})
     slug = AutoSlugField(unique=True, 
-                         populate_from='title', 
-                         slugify=slugify_lower)
+                         populate_from='title')
 
     def __str__(self):
         return self.title

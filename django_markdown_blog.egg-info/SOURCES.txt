@@ -14,4 +14,5 @@ blog/migrations/__init__.py
 django_markdown_blog.egg-info/PKG-INFO
 django_markdown_blog.egg-info/SOURCES.txt
 django_markdown_blog.egg-info/dependency_links.txt
+django_markdown_blog.egg-info/requires.txt
 django_markdown_blog.egg-info/top_level.txt

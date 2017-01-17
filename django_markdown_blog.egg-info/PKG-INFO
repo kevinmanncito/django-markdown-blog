@@ -1,6 +1,6 @@
 Metadata-Version: 1.1
 Name: django-markdown-blog
-Version: 0.2
+Version: 0.3
 Summary: A simple Django app to provide markdown blog functionality.
 Home-page: UNKNOWN
 Author: Kevin Mann

@@ -9,7 +9,7 @@ os.chdir(os.path.normpath(os.path.join(os.path.abspath(__file__), os.pardir)))
 
 setup(
     name='django-markdown-blog',
-    version='0.2',
+    version='0.3',
     packages=find_packages(),
     include_package_data=True,
     license='BSD License',  # example license
@@ -20,7 +20,9 @@ setup(
     install_requires=[
         'Django>=1.9',
         'django-markdown-app>=0.9.0',
-        'django-imagekit>=3.3'
+        'django-imagekit>=3.3',
+        'awesome-slugify>=1.6.5',
+        'django-autoslug>=1.9.3'
     ],
     classifiers=[ 
         'Environment :: Web Environment',

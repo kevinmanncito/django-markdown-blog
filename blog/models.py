@@ -8,6 +8,9 @@ from django.utils.translation import ugettext_lazy as _
 
 from autoslug.fields import AutoSlugField
 from django_markdown.models import MarkdownField
+from slugify import Slugify
+
+slugify_lower = Slugify(to_lower=True)
 
 
 @python_2_unicode_compatible
@@ -17,7 +20,9 @@ class Post(models.Model):
     published = models.BooleanField(_('Published status'), default=False)
     modified = models.DateTimeField(auto_now=True)
     created = models.DateTimeField(auto_now_add=True)
-    slug = AutoSlugField(unique=True, populate_from='title')
+    slug = AutoSlugField(unique=True, 
+                         populate_from='title', 
+                         slugify=slugify_lower)
 
     def __str__(self):
         return self.title
